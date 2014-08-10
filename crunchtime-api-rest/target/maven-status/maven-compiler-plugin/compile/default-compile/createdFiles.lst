@@ -1,0 +1,4 @@
+io/crunchtime/rest/jersey/JerseyApplication.class
+io/crunchtime/rest/resources/MeetingResourceImpl.class
+io/crunchtime/rest/jersey/JerseyLog4jLoggerWrapper.class
+io/crunchtime/rest/resources/MeetingResource.class
