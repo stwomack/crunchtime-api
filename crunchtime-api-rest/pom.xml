@@ -35,7 +35,7 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>${maven-jetty-plugin.version}</version>
 				<configuration>
-				<contextPath>/crunchtime</contextPath>
+					<contextPath>/crunchtime</contextPath>
 				</configuration>
 			</plugin>
 		</plugins>
