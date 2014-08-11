@@ -14,10 +14,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Consumes({ MediaType.APPLICATION_JSON})
-@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XHTML_XML })
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XHTML_XML,
+		MediaType.TEXT_PLAIN, MediaType.TEXT_HTML, MediaType.APPLICATION_XML })
 public interface GenericCrudResource<T, PK extends Serializable> {
-	
+
 	/**
 	 * 
 	 * @param id
@@ -26,9 +27,8 @@ public interface GenericCrudResource<T, PK extends Serializable> {
 	@GET
 	@Path("{id}")
 	public T getById(
-		@PathParam("id") 
-		@NotNull(message = "id is a required field.") PK id);
-	
+			@PathParam("id") @NotNull(message = "id is a required field.") PK id);
+
 	/**
 	 * 
 	 * @param id
@@ -36,28 +36,28 @@ public interface GenericCrudResource<T, PK extends Serializable> {
 	 */
 	@DELETE
 	@Path("{id}")
-	@Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN })
+	@Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON,
+			MediaType.TEXT_PLAIN })
 	public void delete(
-		@PathParam("id") 
-		@NotNull(message = "id is a required field.") PK id);
-	
-//	/**
-//	 *
-//	 * @return Response
-//	 */
-//	@GET
-//	List<T> getAll();
+			@PathParam("id") @NotNull(message = "id is a required field.") PK id);
 
-//    @GET
-//    List<T> getAllWithPagination(
-//            @QueryParam("firstResult") int firstResult,
-//            @QueryParam("maxResults") int maxResults,
-//            @QueryParam("orderCriteria") String orderCriteria);
+	// /**
+	// *
+	// * @return Response
+	// */
+	// @GET
+	// List<T> getAll();
 
-    @GET
-    @Path("/count")
-    long getCount();
-	
+	// @GET
+	// List<T> getAllWithPagination(
+	// @QueryParam("firstResult") int firstResult,
+	// @QueryParam("maxResults") int maxResults,
+	// @QueryParam("orderCriteria") String orderCriteria);
+
+	@GET
+	@Path("/count")
+	long getCount();
+
 	/**
 	 * 
 	 * @param object
@@ -65,7 +65,7 @@ public interface GenericCrudResource<T, PK extends Serializable> {
 	 */
 	@POST
 	public Response create(T object);
-	
+
 	/**
 	 * 
 	 * @param object
@@ -74,15 +74,15 @@ public interface GenericCrudResource<T, PK extends Serializable> {
 	@PUT
 	@Path("{id}")
 	public void update(
-		@PathParam("id") 
-		@NotNull(message = "id is a required field.") PK id,
-		T object);
-	
-//	/**
-//	 * 
-//	 * @param actionType
-//	 * @return Response
-//	 */
-//	@PUT
-//	public Response createActionType(@QueryParam("id") String id, @QueryParam("name") String name);
+			@PathParam("id") @NotNull(message = "id is a required field.") PK id,
+			T object);
+
+	// /**
+	// *
+	// * @param actionType
+	// * @return Response
+	// */
+	// @PUT
+	// public Response createActionType(@QueryParam("id") String id,
+	// @QueryParam("name") String name);
 }

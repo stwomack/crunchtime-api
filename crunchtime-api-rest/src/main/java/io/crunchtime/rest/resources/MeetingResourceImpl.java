@@ -24,7 +24,13 @@ public class MeetingResourceImpl extends
 
 		System.out.println("Entity: " + entity.toString()) ;
 
-		return Response.ok(entity).build();
+		Response response = null;
+		try {
+			response = Response.ok(entity).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return response;
 	}
 
 	@Override

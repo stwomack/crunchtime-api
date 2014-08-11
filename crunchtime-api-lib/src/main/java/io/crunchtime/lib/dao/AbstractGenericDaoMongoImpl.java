@@ -61,6 +61,14 @@ public class AbstractGenericDaoMongoImpl <T, PK extends Serializable> implements
 	public List<T> findAll(int firstResult, int maxResults, String sortCriteria) {
 		return null;
 	}
+	
+//    @Override
+//    public List<T> findAll() {
+//    	return getSession()
+//    		.createCriteria(type)
+//    		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY)
+//    		.list();
+//    }
 
 	@Override
 	public void update(T object) {

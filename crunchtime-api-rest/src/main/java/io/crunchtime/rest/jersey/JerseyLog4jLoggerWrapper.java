@@ -26,10 +26,6 @@ public class JerseyLog4jLoggerWrapper extends Handler {
 	}
 
 	private Priority convertToLog4JPriority(Level level) {
-		return org.apache.log4j.Level.ALL;
-	}
-
-	private Priority convertToLog4JPriority_KEEP(Level level) {
 		if (Level.ALL.equals(level)) {
 			return org.apache.log4j.Level.INFO;
 		} else if (Level.CONFIG.equals(level)) {
