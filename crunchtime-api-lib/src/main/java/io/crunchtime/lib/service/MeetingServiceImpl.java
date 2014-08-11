@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("managementJobService")
+@Service("meetingService")
 public class MeetingServiceImpl extends
 		GenericCrudServiceImpl<Meeting, String> implements
 		MeetingService {

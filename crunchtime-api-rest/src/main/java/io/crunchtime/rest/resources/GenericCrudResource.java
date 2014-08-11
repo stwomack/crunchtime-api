@@ -1,7 +1,6 @@
 package io.crunchtime.rest.resources;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
@@ -12,12 +11,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Produces({ MediaType.APPLICATION_XHTML_XML, MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-@Consumes({ MediaType.APPLICATION_XHTML_XML, MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
+@Consumes({ MediaType.APPLICATION_JSON })
 public interface GenericCrudResource<T, PK extends Serializable> {
 	
 	/**
@@ -50,11 +48,11 @@ public interface GenericCrudResource<T, PK extends Serializable> {
 //	@GET
 //	List<T> getAll();
 
-    @GET
-    List<T> getAllWithPagination(
-            @QueryParam("firstResult") int firstResult,
-            @QueryParam("maxResults") int maxResults,
-            @QueryParam("orderCriteria") String orderCriteria);
+//    @GET
+//    List<T> getAllWithPagination(
+//            @QueryParam("firstResult") int firstResult,
+//            @QueryParam("maxResults") int maxResults,
+//            @QueryParam("orderCriteria") String orderCriteria);
 
     @GET
     @Path("/count")

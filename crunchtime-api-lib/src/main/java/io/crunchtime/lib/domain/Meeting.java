@@ -4,10 +4,9 @@ import java.util.Calendar;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlRootElement
 public class Meeting {
 
 	String id;

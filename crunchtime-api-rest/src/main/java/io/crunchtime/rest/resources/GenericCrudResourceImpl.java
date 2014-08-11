@@ -28,7 +28,7 @@ public abstract class GenericCrudResourceImpl<T, PK extends Serializable, SERVIC
 		getService().delete(object);
 	}
 
-    @Override
+//    @Override
     public List<T> getAllWithPagination(int firstResult, int maxResults, String orderCriteria) {
         return getService().findAll(firstResult, maxResults, orderCriteria);
     }
