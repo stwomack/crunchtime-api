@@ -23,6 +23,4 @@ public class MeetingServiceImpl extends
 	protected GenericDao<Meeting, String> getDao() {
 		return meetingDao;
 	}
-
-
 }

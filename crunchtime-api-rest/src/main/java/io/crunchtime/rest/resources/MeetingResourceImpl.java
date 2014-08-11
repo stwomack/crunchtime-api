@@ -22,9 +22,9 @@ public class MeetingResourceImpl extends
 				meetingService.findAll()) {
 		};
 
-		Response response = Response.ok(entity).build();
+		System.out.println("Entity: " + entity.toString()) ;
 
-		return response;
+		return Response.ok(entity).build();
 	}
 
 	@Override

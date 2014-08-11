@@ -17,7 +17,7 @@ public class MeetingTestDataBuilder {
 		exampleMeetings.add(buildOne("Test5"));
 		exampleMeetings.add(buildOne("Test6"));
 		exampleMeetings.add(buildOne("Test7"));
-		
+		System.err.println("Hello, yes this is getting called. Motherfucker!");
 		return exampleMeetings;
 	}
 
