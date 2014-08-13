@@ -26,11 +26,6 @@
 			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.atmosphere</groupId>
-			<artifactId>atmosphere-jersey</artifactId>
-			<version>${atmosphere.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>

@@ -16,12 +16,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="CrunchtimeController">
     <h1>Let's Crunch some Time!</h1>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/crunchtime.js"></script>
   </body>
 </html>
