@@ -7,7 +7,5 @@
 
 	<context:annotation-config />
 	<context:component-scan base-package="io.crunchtime"/>
-	<!--
-	<import resource="classpath:spring/management-api-lib-context.xml"/>
-	  -->
+	<import resource="classpath:spring/data-context.xml"/>
 </beans>

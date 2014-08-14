@@ -2,7 +2,7 @@ package io.crunchtime.rest.resources;
 
 import java.util.List;
 
-import io.crunchtime.lib.domain.Meeting;
+import io.crunchtime.lib.domain.meeting.Meeting;
 import io.crunchtime.lib.service.MeetingService;
 
 import javax.ws.rs.core.GenericEntity;
