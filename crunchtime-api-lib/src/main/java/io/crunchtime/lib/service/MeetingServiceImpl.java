@@ -2,7 +2,7 @@ package io.crunchtime.lib.service;
 
 import io.crunchtime.lib.dao.GenericDao;
 import io.crunchtime.lib.dao.MeetingDao;
-import io.crunchtime.lib.domain.Meeting;
+import io.crunchtime.lib.domain.meeting.Meeting;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

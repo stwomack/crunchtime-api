@@ -2,7 +2,7 @@ package io.crunchtime.lib.dao;
 
 import java.util.List;
 
-import io.crunchtime.lib.domain.Meeting;
+import io.crunchtime.lib.domain.meeting.Meeting;
 import io.crunchtime.lib.helpers.testdata.MeetingTestDataBuilder;
 
 import org.springframework.stereotype.Repository;
