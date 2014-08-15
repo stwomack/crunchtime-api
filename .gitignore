@@ -1,1 +1,9 @@
 /target/
+.project
+crunchtime-api-lib/.classpath
+crunchtime-api-lib/.project
+crunchtime-api-lib/.settings/
+crunchtime-api-lib/bin/
+crunchtime-api-rest/.classpath
+crunchtime-api-rest/.project
+crunchtime-api-rest/.settings/
