@@ -8,7 +8,7 @@ import io.crunchtime.lib.helpers.testdata.MeetingTestDataBuilder;
 import org.springframework.stereotype.Repository;
 
 @Repository("meetingDaoMongoImpl")
-public class MeetingDaoMongoImpl extends AbstractGenericDaoRedisImpl<Meeting, String> implements MeetingDao {
+public class MeetingDaoFakeImpl extends AbstractGenericDaoFakeImpl<Meeting, String> implements MeetingDao {
 
 	@Override
 	//TODO remove me when findAll, etc are implemented in AbstractGenericDaoMongoImpl
