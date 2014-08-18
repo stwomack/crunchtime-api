@@ -1,8 +1,9 @@
 package io.crunchtime.lib.dao;
 
-import io.crunchtime.lib.service.MeetingServiceImpl;
+import java.io.Serializable;
 
 import org.apache.log4j.Logger;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -12,16 +13,18 @@ import org.springframework.stereotype.Repository;
 public class RedisDaoImpl implements RedisDao {
 
 	private static Logger logger = Logger
-			.getLogger(MeetingServiceImpl.class);
+			.getLogger(RedisDaoImpl.class);
 	
 	@Autowired
 	RedisTemplate redisTemplate;
 
-	public void saveAndSendToBroker(String channel, String name,
-			String message) {
-		String fullMessage = name + " : " + message;
-		logger.info("Saving: " + fullMessage);
-		redisTemplate.opsForValue().append(channel, fullMessage);
-		redisTemplate.convertAndSend(channel, fullMessage);
+	@Override
+	public void saveAndSendToBroker(String channel, Serializable domainObject) {
+		String jsonString = new JSONObject(domainObject).toString();
+		logger.info("Sending: " + jsonString);
+		redisTemplate.convertAndSend(channel, jsonString);
+		redisTemplate.opsForValue().append(channel, jsonString);
 	}
+
+
 }

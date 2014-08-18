@@ -43,6 +43,11 @@
 			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		<dependency>
 			<groupId>org.glassfish.jersey.ext</groupId>
 			<artifactId>jersey-bean-validation</artifactId>
 			<version>${jersey.version}</version>

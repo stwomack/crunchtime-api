@@ -1,19 +1,21 @@
 package io.crunchtime.lib.dao;
 
+import io.crunchtime.lib.domain.meeting.Meeting;
+import io.crunchtime.lib.helpers.testdata.MeetingTestDataBuilder;
 import io.crunchtime.lib.test.IntegrationTest;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@SuppressWarnings({})
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class RedisDaoImpl_IT extends IntegrationTest {
 
-
 	@Autowired
-	RedisDaoImpl redisDao;
+	RedisDao redisDao;
 
 	@Test
 	public void saveAndSendToBroker() {
-		redisDao.saveAndSendToBroker("test", "test-guy", "Hello there, Redis!");
+		Meeting meeting = new MeetingTestDataBuilder().buildOne("testMeeting", "Steve", "Womack");
+		redisDao.saveAndSendToBroker(meeting.getTopic(), meeting);
 	}
 }

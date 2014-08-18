@@ -1,5 +1,10 @@
 package io.crunchtime.lib.domain.meeting;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -7,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @XmlRootElement
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class MeetingAttendee {
+public class MeetingAttendee implements Serializable {
+
+	private static final long serialVersionUID = 9184097907914500115L;
 
 	String id;
 
@@ -16,19 +23,14 @@ public class MeetingAttendee {
 
 	@NotNull
 	String lastName;
+	
+	List<String> comments;
 
 	public MeetingAttendee(String firstName, String lastName) {
-		super();
+		id = UUID.randomUUID().toString();
+		comments = new ArrayList<String>();
 		this.firstName = firstName;
 		this.lastName = lastName;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -47,4 +49,18 @@ public class MeetingAttendee {
 		this.lastName = lastName;
 	}
 
+	public List<String> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<String> comments) {
+		this.comments = comments;
+	}
+
+	@Override
+	public String toString() {
+		return "MeetingAttendee [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", comments=" + comments + "]";
+	}
+	
 }

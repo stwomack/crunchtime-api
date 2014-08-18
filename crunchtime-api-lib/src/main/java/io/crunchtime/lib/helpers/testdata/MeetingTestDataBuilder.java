@@ -8,9 +8,9 @@ import java.util.List;
 
 public class MeetingTestDataBuilder {
 
-	static List<MeetingAttendee> meetingAttendees = new ArrayList<MeetingAttendee>();
+	List<MeetingAttendee> meetingAttendees = new ArrayList<MeetingAttendee>();
 
-	public static List<Meeting> buildAll() {
+	public List<Meeting> buildAll() {
 		List<Meeting> exampleMeetings = new ArrayList<Meeting>();
 		exampleMeetings.add(buildOne("Test1", "Jim", "Johnson"));
 		exampleMeetings.add(buildOne("Test2", "Bob", "Robertson"));
@@ -22,7 +22,7 @@ public class MeetingTestDataBuilder {
 		return exampleMeetings;
 	}
 
-	public static Meeting buildOne(String topic, String firstName,
+	public Meeting buildOne(String topic, String firstName,
 			String lastName) {
 		MeetingAttendee meetingAttendee = new MeetingAttendee(firstName,
 				firstName);

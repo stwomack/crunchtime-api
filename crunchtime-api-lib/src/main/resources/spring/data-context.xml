@@ -12,6 +12,6 @@
 		p:use-pool="true" />
 
 	<!-- redis template definition -->
-	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate"
 		p:connection-factory-ref="jedisConnectionFactory" />
 </beans>

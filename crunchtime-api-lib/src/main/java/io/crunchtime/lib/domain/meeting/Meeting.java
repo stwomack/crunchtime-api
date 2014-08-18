@@ -1,8 +1,8 @@
 package io.crunchtime.lib.domain.meeting;
 
-import io.crunchtime.lib.domain.meeting.chat.ChatRoom;
-
+import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -10,8 +10,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @XmlRootElement
-@JsonIgnoreProperties(ignoreUnknown=false)
-public class Meeting {
+@JsonIgnoreProperties(ignoreUnknown = false)
+public class Meeting implements Serializable {
+
+	private static final long serialVersionUID = 5166689201559547513L;
 
 	String id;
 
@@ -21,25 +23,12 @@ public class Meeting {
 	MeetingStatus meetingStatus;
 
 	List<MeetingAttendee> meetingAttendees;
-	
-	ChatRoom chatRoom;
 
-	public Meeting() {	}
-	
-	
 	public Meeting(String topic, List<MeetingAttendee> meetingAttendees) {
-		super();
+		id = UUID.randomUUID().toString();
+		meetingStatus = MeetingStatus.NEW;
 		this.topic = topic;
 		this.meetingAttendees = meetingAttendees;
-		this.chatRoom = new ChatRoom();
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getTopic() {
@@ -66,12 +55,11 @@ public class Meeting {
 		this.meetingAttendees = meetingAttendees;
 	}
 
-	public ChatRoom getChatRoom() {
-		return chatRoom;
+	@Override
+	public String toString() {
+		return "Meeting [id=" + id + ", topic=" + topic + ", meetingStatus="
+				+ meetingStatus + ", meetingAttendees=" + meetingAttendees
+				+ "]";
 	}
-
-	public void setChatRoom(ChatRoom chatRoom) {
-		this.chatRoom = chatRoom;
-	}
-
+	
 }
