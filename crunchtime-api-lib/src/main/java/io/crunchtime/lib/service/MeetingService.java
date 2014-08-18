@@ -2,7 +2,7 @@ package io.crunchtime.lib.service;
 
 import java.util.List;
 
-import io.crunchtime.lib.domain.meeting.Meeting;
+import io.crunchtime.lib.domain.Meeting;
 
 public interface MeetingService {
 	

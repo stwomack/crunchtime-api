@@ -1,6 +1,6 @@
 package io.crunchtime.lib.dao;
 
-import java.io.Serializable;
+import io.crunchtime.lib.domain.CrunchtimeSerializable;
 
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
@@ -19,12 +19,11 @@ public class RedisDaoImpl implements RedisDao {
 	RedisTemplate redisTemplate;
 
 	@Override
-	public void saveAndSendToBroker(String channel, Serializable domainObject) {
+	public void saveAndSendToBroker(String channel, CrunchtimeSerializable domainObject) {
 		String jsonString = new JSONObject(domainObject).toString();
 		logger.info("Sending: " + jsonString);
 		redisTemplate.convertAndSend(channel, jsonString);
-		redisTemplate.opsForValue().append(channel, jsonString);
+		redisTemplate.opsForValue().append(channel + domainObject.getId(), jsonString);
 	}
-
 
 }

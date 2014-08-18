@@ -1,4 +1,4 @@
-package io.crunchtime.lib.domain.meeting;
+package io.crunchtime.lib.domain;
 
 public enum MeetingStatus {
 	NEW,

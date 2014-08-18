@@ -1,6 +1,6 @@
 package io.crunchtime.lib.dao;
 
-import io.crunchtime.lib.domain.meeting.Meeting;
+import io.crunchtime.lib.domain.Meeting;
 import io.crunchtime.lib.helpers.testdata.MeetingTestDataBuilder;
 import io.crunchtime.lib.test.IntegrationTest;
 
@@ -16,6 +16,7 @@ public class RedisDaoImpl_IT extends IntegrationTest {
 	@Test
 	public void saveAndSendToBroker() {
 		Meeting meeting = new MeetingTestDataBuilder().buildOne("testMeeting", "Steve", "Womack");
+		System.err.println(meeting.toString());
 		redisDao.saveAndSendToBroker(meeting.getTopic(), meeting);
 	}
 }

@@ -1,21 +1,23 @@
-package io.crunchtime.lib.domain.meeting;
+package io.crunchtime.lib.domain;
 
-import java.io.Serializable;
 import java.util.List;
-import java.util.UUID;
 
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 @JsonIgnoreProperties(ignoreUnknown = false)
-public class Meeting implements Serializable {
+public class Meeting extends CrunchtimeSerializable {
 
-	private static final long serialVersionUID = 5166689201559547513L;
-
-	String id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 987348484607973133L;
 
 	@NotNull
 	String topic;
@@ -25,7 +27,6 @@ public class Meeting implements Serializable {
 	List<MeetingAttendee> meetingAttendees;
 
 	public Meeting(String topic, List<MeetingAttendee> meetingAttendees) {
-		id = UUID.randomUUID().toString();
 		meetingStatus = MeetingStatus.NEW;
 		this.topic = topic;
 		this.meetingAttendees = meetingAttendees;
@@ -61,5 +62,5 @@ public class Meeting implements Serializable {
 				+ meetingStatus + ", meetingAttendees=" + meetingAttendees
 				+ "]";
 	}
-	
+
 }

@@ -1,7 +1,7 @@
 package io.crunchtime.lib.helpers.testdata;
 
-import io.crunchtime.lib.domain.meeting.Meeting;
-import io.crunchtime.lib.domain.meeting.MeetingAttendee;
+import io.crunchtime.lib.domain.Meeting;
+import io.crunchtime.lib.domain.MeetingAttendee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,9 @@ public class MeetingTestDataBuilder {
 			String lastName) {
 		MeetingAttendee meetingAttendee = new MeetingAttendee(firstName,
 				firstName);
+		meetingAttendee.getComments().add("Hello everyone!");
+		meetingAttendee.getComments().add("Hello everyone!");
+		meetingAttendee.getComments().add("Hello everyone!");
 		meetingAttendees.add(meetingAttendee);
 		Meeting meeting = new Meeting(topic, meetingAttendees);
 		return meeting;
