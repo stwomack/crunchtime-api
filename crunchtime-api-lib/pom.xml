@@ -20,10 +20,6 @@
 					<groupId>org.springframework</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>spring-bridge</artifactId>
-					<groupId>org.glassfish.hk2</groupId>
-				</exclusion>
-				<exclusion>
 					<artifactId>spring-aop</artifactId>
 					<groupId>org.springframework</groupId>
 				</exclusion>

@@ -11,14 +11,14 @@
     <logger name="io.crunchtime">
         <level value="debug"/>
     </logger>
-    <logger name="org.glassfish.jersey.filter.LoggingFilter">
+    <logger name="org.glassfish.jersey">
     	<level value="trace"/>
     </logger>
     <logger name="org.springframework">
     	<level value="info"/>
     </logger>    
     <root>
-        <priority value="all"/>
+        <priority value="trace"/>
         <appender-ref ref="ConsoleAppender"/>
     </root>
 </log4j:configuration>

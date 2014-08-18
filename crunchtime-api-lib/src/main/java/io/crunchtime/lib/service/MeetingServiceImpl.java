@@ -1,7 +1,10 @@
 package io.crunchtime.lib.service;
 
+import java.util.List;
+
 import io.crunchtime.lib.dao.RedisDao;
 import io.crunchtime.lib.domain.meeting.Meeting;
+import io.crunchtime.lib.helpers.testdata.MeetingTestDataBuilder;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +21,14 @@ public class MeetingServiceImpl implements MeetingService {
 	private RedisDao<Meeting> redisDao;
 
 	@Override
-	public void createMeeting(Meeting meeting) {
+	public void create(Meeting meeting) {
+		logger.info(meeting.toString());
 		redisDao.saveAndSendToBroker(MEETINGS_CHANNEL, meeting);
+	}
+
+	@Override
+	public List<Meeting> findAll() {
+		return new MeetingTestDataBuilder().buildAll();
 	};
 
 }
